@@ -3,7 +3,7 @@ const helmet = require("helmet");
 const cors = require("cors");
 
 const ActionsRouter = require("./data/routers/ActionsRouter");
-// const ProjectRouter = require("./data/routers/ProjectRouter");
+const ProjectsRouter = require("./data/routers/ProjectsRouter");
 
 const server = express();
 
@@ -13,7 +13,7 @@ server.use(logger);
 server.use(cors())
 
 server.use("/api/actions", ActionsRouter);
-// server.use("/projects", ProjectRouter);
+server.use("/api/projects", ProjectsRouter);
 
 server.get('/', logger, (req, res) => {
     res.send(`<h2>API CHALLENGE</h2>`)

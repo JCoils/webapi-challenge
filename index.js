@@ -13,23 +13,11 @@ I need this code, just don't know where, perhaps should make some middleware, do
 Go code!
 */
 
-const express = require('express')
-
-const ProjectsRouter = require('./data/routers/ProjectsRouter')
-const ActionsRouter = require('./data/routers/ActionsRouter')
-
-const server = express()
-
-server.use(express.json())
-
+const server = require('./server')
+  
 const PORT = 7777
 
-server.get('/', (req, res) => {
-    res.send(`<h2>Welcome to the API</h2>`)
-  })
-  
-  server.listen(PORT, _ =>
+  server.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`)
-  )
+  })
 
-  
